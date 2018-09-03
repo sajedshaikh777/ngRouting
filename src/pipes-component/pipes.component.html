@@ -1,0 +1,6 @@
+<p><strong>Title:</strong> {{ course.title | uppercase }}</p>
+<p><strong>Students:</strong> {{ course.students | number }}</p>
+<p><strong>Rating:</strong> {{ course.rating | number: '2.2-2' }}</p>
+<p><strong>Price:</strong> {{ course.price | currency:'AUD':true:'3.2-2'  }}</p>
+<p><strong>Release Date:</strong> {{ course.releaseDate | date:'shortDate' }}</p>
+<p><strong>Custom Pipe:</strong> {{ course.sampleText | summary }}</p>

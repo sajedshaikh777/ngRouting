@@ -1,0 +1,65 @@
+Home component
+
+
+<button (click)="onAdd()">Add</button>
+
+<button (click)="loadCourses()">Load Courses</button>
+
+<ul>
+  <li *ngFor="let course of courses; index as i; 
+  even as isEven; 
+  odd as isOdd; 
+  first as isFirst; 
+  last as isLast;
+  trackBy: trackCourse;">
+    {{ i + 1 }} - {{ course.name }} {{ i + 1 }}
+    <span *ngIf="isFirst">(FIRST)</span>
+    <span *ngIf="isLast">(LAST)</span>
+    <span *ngIf="isEven">(EVEN)</span>
+    <span *ngIf="isOdd">(ODD)</span>
+    <button (click)="onRemove(course)">Remove</button>
+  </li>
+</ul>
+
+<!-- ngSwitchCase -->
+<!-- <ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link" [class.active]="viewMode == 'map'" (click)="viewMode = 'map'">Map View</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [class.active]="viewMode == 'list'" (click)="viewMode = 'list'">List View</a>
+  </li>
+</ul>
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'map'">Map View Content</div>
+  <div *ngSwitchCase="'list'">List View Content</div>
+  <div *ngSwitchDefault>Otherwise</div>
+</div> -->
+
+
+<!-- ngIf -->
+<!-- <div *ngIf="courses.length > 0">
+    List of courses
+</div>
+<div *ngIf="courses.length == 0">
+    No courses found
+</div> -->
+
+
+<!-- ngTemplate -->
+<!-- <div *ngIf="courses.length > 0; then listOfCourses else noCourses"></div>
+<ng-template #listOfCourses>
+    List of courses
+</ng-template>
+<ng-template #noCourses>
+    No courses found
+</ng-template> -->
+
+
+<!-- hidden -->
+<!-- <div [hidden]="courses.length == 0">
+    List of courses
+</div>
+<div [hidden]="courses.length > 0">
+    No courses found
+</div> -->
